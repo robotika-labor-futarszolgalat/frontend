@@ -1,0 +1,131 @@
+<dom-module id="loginform-panel">
+
+    <style>
+    </style>
+
+    
+    <template>
+        <div class="layout horizontal flex" style="">
+			<paper-button id="loginBtn" class="centered" raised noink data-dialog="login" on-tap="buttonPressed">Login</paper-button>
+
+            <paper-button id="roomBtn" class="centered" raised noink data-dialog="changeRoom" on-tap="buttonPressed">Room</paper-button>
+
+            <paper-button id="logoutBtn" class="centered" raised noink data-dialog="logout" on-tap="buttonPressed">Logout</paper-button>
+        </div>
+
+        <paper-dialog id="changeRoom" modal>
+            <h2>Select room</h2>
+            <paper-dropdown-menu label="Room">
+                <paper-menu class="dropdown-content">
+                    <paper-item>D202</paper-item>
+                    <paper-item>D203</paper-item>
+                    <paper-item>D204</paper-item>
+                    <paper-item>D502</paper-item>
+                </paper-menu>
+            </paper-dropdown-menu>
+            <div class="buttons">
+                <paper-button dialog-confirm on-tap="doChangeRoom">OK</paper-button>
+            </div>
+        </paper-dialog>
+
+        <paper-dialog id="login" modal>
+          <paper-input id="username" label="Username"></paper-input>
+          <paper-input id="passwd" label="Password" type="password"></paper-input>
+          <div class="buttons">
+            <paper-button dialog-confirm on-tap="doLogin">Login</paper-button>
+          </div>
+        </paper-dialog>
+
+        <paper-dialog id="logout" modal>
+            <h2>You are going to leave...</h2>
+            <div class="buttons">
+                <paper-button dialog-dismiss autofocus>Back</paper-button>
+                <paper-button dialog-confirm on-tap="doLogout">Logout</paper-button>
+            </div>
+        </paper-dialog>
+
+    </template>
+
+    <script>
+
+        var hidden = "hidden";
+        var loginBtn = "#loginBtn";
+        var logoutBtn = "#logoutBtn";
+
+        var passwdInp = "#passwd";
+        var userNameInp = "#username";
+
+        var logged = false;
+        var toggleLogin = function(_logged) {
+            logged = typeof _logged === "undefined" ? logged : _logged;
+            if(logged){
+                $(loginBtn).attr(hidden, hidden);
+                $(logoutBtn).removeAttr(hidden);
+            }else{
+                $(logoutBtn).attr(hidden, hidden);
+                $(loginBtn).removeAttr(hidden);
+            }
+        }
+
+        window.addEventListener('WebComponentsReady', function(e){
+            toggleLogin();
+        });
+
+
+        var doLogin = function (auth) {
+            var success = false;
+            if(auth.user == "admin" && auth.passwd == "pass"){
+                success = true;
+            }
+            return success;
+        }
+
+
+        Polymer({
+
+            is: "loginform-panel",
+            properties: {
+            },
+
+            doLogin: function() {
+                var user = $(userNameInp).val();
+                var passwd = $(passwdInp).val();
+                console.log("Login...", { username: user, password: passwd });
+
+                var result = doLogin({user: user, passwd: passwd});
+                if(result){
+                    toggleLogin(result);
+                    console.log("successfully logged");
+                }
+
+                $(passwdInp).val('');
+            },
+
+            doLogout: function() {
+                console.log("Logout...");
+                toggleLogin(false);
+            },
+
+            doChangeRoom: function() {
+                console.log("changeRoom...");
+            },
+
+            buttonPressed: function(e) {
+
+                var button = e.target;
+                while (!button.hasAttribute('data-dialog') && button !== document.body) {
+                    button = button.parentElement;
+                }
+                if (!button.hasAttribute('data-dialog')) {
+                    return;
+                }
+                var id = button.getAttribute('data-dialog');
+                var dialog = document.getElementById(id);
+                if (dialog) {
+                    dialog.open();
+                }
+            }
+        });
+    </script>
+
+</dom-module>

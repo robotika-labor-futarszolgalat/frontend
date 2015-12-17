@@ -1,8 +1,19 @@
 <link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
 <link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+
 <link rel="import" href="../header-content/header-content.html">
 <link rel="import" href="../robot-map/robot-map.html">
 <link rel="import" href="../robot-instruction-panel/robot-instruction-panel.html">
+
 
 <dom-module id="delivery-app">
     <style>
@@ -10,10 +21,10 @@
     <template>    
         <paper-header-panel>
           <paper-toolbar>
-              <header-content></header-content>
+            <header-content></header-content>
           </paper-toolbar>
-          
         </paper-header-panel>
+
         <div id="content" class="flex layout horizontal">
             <robot-instruction-panel class="flex"></robot-instruction-panel>
             <robot-map class="flex-3"></robot-map>
