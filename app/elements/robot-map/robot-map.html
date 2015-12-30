@@ -6,13 +6,142 @@
     </style>
 
     <template>
-        <div>Map goes here</div>
+        <div id="map"></div>
     </template>
-
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
     <script>
         Polymer({
             is: "robot-map",
             properties: {
+            },
+            attached: function() {
+                this.async(function(){
+                    var initWidth = this.getBoundingClientRect().width,
+                        initHeight = initWidth/2,
+                        centered;
+
+                    var actualScale = 1;
+
+                    console.log("initial width: " + initWidth);
+                    console.log("initial height: " + initHeight);
+
+                    //Create the SVG
+                    var svg = d3.select("#map").append("svg").attr("width", initWidth).attr("height", initHeight);
+                    
+                    var xScale = d3.scale.linear().domain([0, 570]).range([0, initWidth]);
+
+                    var yScale = d3.scale.linear().domain([-200, -460]).range([initHeight, 0]);
+
+                    var pavement = d3.svg.line().interpolate("linear").x(function(d) {
+                            return xScale(d[0]);
+                            }).y(function(d) {
+                                return yScale(d[1]);
+                            });
+                        
+
+                    var g = svg.append("g").style("stroke-width", "1.5px").attr("id","maing");
+
+                    //Build the map
+                    d3.json("test.json", function(error, jsonData) {
+                        var color1 = d3.scale.category10();
+
+                        g.selectAll("path")
+                            .data(jsonData.features)
+                            .enter()
+                            .append("path")
+                            .attr("d", function(d, i) {
+                                return pavement(d.geometry.coordinates[0]);
+                            })
+                            .attr("text", function(d, i) {
+                                return d.properties.ID;
+                            })
+                            .attr("fill", function(d, i) {
+                                return color1(i);
+                            })
+                            .on("click", clicked);
+
+                        // add circle to svg which represents the robot
+                        g.selectAll("circle")
+                            .data([[200,30]]).enter()
+                            .append("circle")
+                            .attr("cx", function (d) { console.log(d[0]); return d[0]; })
+                            .attr("cy", function (d) { return d[1]; })
+                            .attr("r", "8px")
+                            .attr("fill", "green").attr("id","robot");
+
+                    });
+                    
+                    window.onresize = updateWindow;
+
+                    function getCentroid(selection) {
+                        // get the DOM element from a D3 selection
+                        // you could also use "this" inside .each()
+                        var element = selection.node(),
+                            // use the native SVG interface to get the bounding box
+                            bbox = element.getBBox();
+                        // return the center of the bounding box
+                        return [bbox.x + bbox.width/2, bbox.y + bbox.height/2];
+                    }
+
+                    function getActualSize()
+                    {   
+                        var width = document.getElementById("map").offsetWidth-10;
+                        return [width, width/2];
+                    }
+
+                    //Clicked on a building
+                    function clicked(d) {
+                        var x, y, k;
+
+                        var centroid = getCentroid(d3.select(this));
+                        console.log(centroid);
+
+                        if (d && centered !== d) {
+                            x = centroid[0];
+                            y = centroid[1];
+                            if (centered == null)
+                            {
+                                k = actualScale*4;
+                            } else
+                            {
+                                k = actualScale;
+                            }
+                            
+                            actualScale = k;
+                            centered = d;
+                            g.transition()
+                            .duration(750)
+                            .attr("transform", "translate(" + getActualSize()[0] / 2 + "," + getActualSize()[1] / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+                            .style("stroke-width", 1.5 / k + "px");
+                        } else {
+                            x = initWidth / 2;
+                            y = initHeight / 2;
+                            k = getActualSize()[0]/initWidth;
+                            actualScale = k;
+                            centered = null;
+                            g.transition()
+                            .duration(750)
+                            .attr("transform", "scale(" + k + ")translate(" + 0 + "," + 0 + ")")
+                            .style("stroke-width", 1.5 / k + "px");
+                        }
+                        
+                    }
+
+                    function updateWindow(){
+                        nwidth = getActualSize()[0];
+                        nheight = getActualSize()[1];
+                        console.log("new width: " + nwidth);
+                        console.log("new height: " + nheight);                        
+                        svg.attr("width", nwidth).attr("height", nheight);
+                        actualScale = (nwidth/initWidth)
+                        g.transition()
+                            .duration(550)
+                            .attr("transform", "scale(" + actualScale + ")")
+                            .style("stroke-width", 1.5 / actualScale + "px");
+
+                    }
+                });
             }
         });
     </script>
