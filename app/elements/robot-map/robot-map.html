@@ -3,10 +3,25 @@
         :host{
             background-color: #cccccc;
         }
+
+        ::shadow .reset-view {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+        }
+
+        ::shadow .axis line {
+          fill: none;
+          stroke: #ddd;
+          shape-rendering: crispEdges;
+          vector-effect: non-scaling-stroke;
+        }
+
     </style>
 
-    <template>
-        <div id="map"></div>
+    <template>        
+        <div id="map" class="flex layout vertical"></div>
+        <paper-fab mini icon="image:crop-free" class="reset-view"></paper-fab>
     </template>
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="//d3js.org/topojson.v1.min.js"></script>
@@ -17,21 +32,40 @@
             },
             attached: function() {
                 this.async(function(){
-                    var initWidth = this.getBoundingClientRect().width,
-                        initHeight = initWidth/2,
-                        centered;
+                    var initWidth = getActualSize()[0],
+                        initHeight = getActualSize()[1],
+                        centered,
+                        prevTranslate;
 
                     var actualScale = 1;
+                    var prevScale = 1;
 
                     console.log("initial width: " + initWidth);
                     console.log("initial height: " + initHeight);
 
+                    var zoom = d3.behavior.zoom()
+                                    .scaleExtent([1, 4])
+                                    .on("zoom", zoomed);
+
+                    var yTranslate = (initHeight-(initWidth/2))/2;
+
                     //Create the SVG
-                    var svg = d3.select("#map").append("svg").attr("width", initWidth).attr("height", initHeight);
+                    var svg = d3.select("#map").append("svg").attr("class", "flex").append("g")
+                        .attr("transform", "translate(" + 0 + "," + 0 + ")")
+                        .call(zoom);
+
+                    var rect = svg.append("rect")
+                        .attr("width", initWidth)
+                        .attr("height", initHeight)
+                        .style("fill", "none")
+                        .style("pointer-events", "all");
                     
                     var xScale = d3.scale.linear().domain([0, 570]).range([0, initWidth]);
 
-                    var yScale = d3.scale.linear().domain([-200, -460]).range([initHeight, 0]);
+                    var yScale = d3.scale.linear().domain([-200, -460]).range([(initHeight - (initHeight-(initWidth/2))/2)-yTranslate, 0]);
+
+                    console.log("y scale: " + (initHeight-(initWidth/2))/2);
+                    console.log("y scale: " + (initHeight - (initHeight-(initWidth/2))/2));
 
                     var pavement = d3.svg.line().interpolate("linear").x(function(d) {
                             return xScale(d[0]);
@@ -39,9 +73,29 @@
                                 return yScale(d[1]);
                             });
                         
+                    var g = svg.append("g").style("stroke-width", "1px").attr("id","maing")
+                            .attr("transform","translate("+ 0 + "," + 0 +")").call(zoom);
 
-                    var g = svg.append("g").style("stroke-width", "1.5px").attr("id","maing");
+                    g.append("g")
+                    .attr("class", "x axis")
+                    .selectAll("line")
+                    .data(d3.range(0, initWidth, 15))
+                    .enter().append("line")
+                    .attr("x1", function(d) { return d; })
+                    .attr("y1", 0)
+                    .attr("x2", function(d) { return d; })
+                    .attr("y2", initHeight);
 
+                    g.append("g")
+                    .attr("class", "y axis")
+                    .selectAll("line")
+                    .data(d3.range(0, initHeight, 15))
+                    .enter().append("line")
+                    .attr("x1", 0)
+                    .attr("y1", function(d) { return d; })
+                    .attr("x2", initWidth)
+                    .attr("y2", function(d) { return d; });
+                    
                     //Build the map
                     d3.json("test.json", function(error, jsonData) {
                         var color1 = d3.scale.category10();
@@ -63,16 +117,34 @@
 
                         // add circle to svg which represents the robot
                         g.selectAll("circle")
-                            .data([[200,30]]).enter()
+                            .data([[initWidth/2,((initHeight - (initHeight-(initWidth/2))/2)-yTranslate)/2]]).enter()
                             .append("circle")
                             .attr("cx", function (d) { console.log(d[0]); return d[0]; })
                             .attr("cy", function (d) { return d[1]; })
                             .attr("r", "8px")
-                            .attr("fill", "green").attr("id","robot");
+                            .attr("fill", "green")
+                            .attr("id","robot");
 
                     });
                     
                     window.onresize = updateWindow;
+
+                    function zoomed() {
+                        prevTranslate = d3.event.translate;
+                        centered = null;
+
+                        if (prevScale == actualScale*d3.event.scale)
+                        {                            
+                            g.attr("transform", "translate(" + prevTranslate + ")scale(" + prevScale + ")");
+
+                        } else
+                        {
+                            prevScale = actualScale*d3.event.scale;
+                            g.transition()
+                            .duration(300)
+                            .attr("transform", "translate(" + prevTranslate + ")scale(" + prevScale + ")");
+                        }
+                    }
 
                     function getCentroid(selection) {
                         // get the DOM element from a D3 selection
@@ -86,8 +158,10 @@
 
                     function getActualSize()
                     {   
+                        var vmi = document.getElementById("map");
                         var width = document.getElementById("map").offsetWidth-10;
-                        return [width, width/2];
+                        var height = document.getElementById("map").offsetHeight-10;
+                        return [width, height];
                     }
 
                     //Clicked on a building
@@ -100,45 +174,43 @@
                         if (d && centered !== d) {
                             x = centroid[0];
                             y = centroid[1];
-                            if (centered == null)
-                            {
-                                k = actualScale*4;
-                            } else
-                            {
-                                k = actualScale;
-                            }
-                            
-                            actualScale = k;
+                            console.log("centroid x: " + x);
+                            console.log("centroid y: " + y);                           
+                            k = 4;             
+                            zoom.scale(k);
+                            zoom.translate([(getActualSize()[0] / 2)-(x*4), (getActualSize()[1] / 2)-(y*4)]);
                             centered = d;
                             g.transition()
                             .duration(750)
-                            .attr("transform", "translate(" + getActualSize()[0] / 2 + "," + getActualSize()[1] / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
-                            .style("stroke-width", 1.5 / k + "px");
-                        } else {
+                            .attr("transform", "translate(" + getActualSize()[0] / 2 + "," + getActualSize()[1] / 2 + ")scale(" + k + ")translate("+ -x + "," + -y +")")
+                            .style("stroke-width", 1 + "px");
+                        } else {                            
                             x = initWidth / 2;
-                            y = initHeight / 2;
-                            k = getActualSize()[0]/initWidth;
-                            actualScale = k;
+                            y = initHeight / 2;                            
                             centered = null;
+                            zoom.scale(1);
+                            zoom.translate([0,0]);
+                            prevScale = actualScale;                            
                             g.transition()
                             .duration(750)
-                            .attr("transform", "scale(" + k + ")translate(" + 0 + "," + 0 + ")")
-                            .style("stroke-width", 1.5 / k + "px");
+                            .attr("transform", "translate(" + 0 + ")scale(" + actualScale + ")")
+                            .style("stroke-width", 1 + "px");
                         }
-                        
                     }
 
                     function updateWindow(){
                         nwidth = getActualSize()[0];
                         nheight = getActualSize()[1];
                         console.log("new width: " + nwidth);
-                        console.log("new height: " + nheight);                        
-                        svg.attr("width", nwidth).attr("height", nheight);
-                        actualScale = (nwidth/initWidth)
+                        console.log("new height: " + nheight);
+                        //svg.attr("width", nwidth).attr("height", nheight);
+                        actualScale = (nwidth/initWidth);
+                        //yTranslate = (nheight-(nwidth/2))/2;
+                        yTranslate = (getActualSize()[1]-(getActualSize()[0]/2))/2
                         g.transition()
                             .duration(550)
-                            .attr("transform", "scale(" + actualScale + ")")
-                            .style("stroke-width", 1.5 / actualScale + "px");
+                            .attr("transform", "translate(" + 0 + "," + 0 + ")scale(" + actualScale + ")")
+                            .style("stroke-width", 1 + "px");
 
                     }
                 });
