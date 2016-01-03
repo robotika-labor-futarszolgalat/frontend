@@ -6,11 +6,11 @@
     
     <template>
         <div class="layout horizontal flex" style="">
-			<paper-button id="loginBtn" class="centered" raised noink data-dialog="login" on-tap="buttonPressed">Login</paper-button>
+			<paper-button id="loginBtn" hidden class="centered" raised noink data-dialog="login" on-tap="buttonPressed">Login</paper-button>
 
             <paper-button id="roomBtn" class="centered" raised noink data-dialog="changeRoom" on-tap="buttonPressed">Room</paper-button>
 
-            <paper-button id="logoutBtn" class="centered" raised noink data-dialog="logout" on-tap="buttonPressed">Logout</paper-button>
+            <paper-button id="logoutBtn" hidden class="centered" raised noink data-dialog="logout" on-tap="buttonPressed">Logout</paper-button>
         </div>
 
         <paper-dialog id="changeRoom" modal>
@@ -55,6 +55,7 @@
         var passwdInp = "#passwd";
         var userNameInp = "#username";
 
+
         var logged = false;
         var toggleLogin = function(_logged) {
             logged = typeof _logged === "undefined" ? logged : _logged;
@@ -67,18 +68,57 @@
             }
         }
 
-        window.addEventListener('WebComponentsReady', function(e){
-            toggleLogin();
-        });
 
-
-        var doLogin = function (auth) {
-            var success = false;
-            if(auth.user == "admin" && auth.passwd == "pass"){
-                success = true;
-            }
-            return success;
+        var callAjax = function (ajaxParam, cb) {
+             $.ajax($.extend( {}, {
+                type: 'GET',
+                complete: function(rsp) {
+                    var success = false;
+                    var status = rsp.statusCode().status;
+                    if (status == 200) {
+                        success = true;
+                    }
+                    if (typeof cb === "function") {
+                        cb(success, rsp);
+                    };
+                }
+            }, ajaxParam ) );
         }
+
+
+        var isLogged = function (cb) {
+            callAjax({ url: '/api/rest/info' }, cb);
+        }
+
+
+        var doLoginCall = function (auth, cb) {
+            auth = auth || { user: "admin", passwd: "password" };
+
+            var loginFD = new FormData();
+            loginFD.append('username', auth.user);
+            loginFD.append('password', auth.passwd);
+
+            callAjax({
+                url: '/api/loginhandler',
+                type: 'POST',
+                data: loginFD,
+                processData: false,
+                contentType: false,
+            }, cb );
+        };
+
+        var doLogoutCall = function (cb) {
+            callAjax({ url: '/api/logout' }, cb);
+        }
+
+
+        window.addEventListener('WebComponentsReady', function(e){
+
+            isLogged(function(result){
+                toggleLogin(result);
+            });
+
+        });
 
 
         Polymer({
@@ -92,18 +132,24 @@
                 var passwd = $(passwdInp).val();
                 console.log("Login...", { username: user, password: passwd });
 
-                var result = doLogin({user: user, passwd: passwd});
-                if(result){
-                    toggleLogin(result);
-                    console.log("successfully logged");
-                }
-
-                $(passwdInp).val('');
+                doLoginCall({ user: user, passwd: passwd}, function(result){
+                    if(result){
+                        toggleLogin(true);
+                        console.log("successfully logged");
+                    }
+                    $(passwdInp).val('');
+                });
             },
 
             doLogout: function() {
                 console.log("Logout...");
-                toggleLogin(false);
+
+                doLogoutCall(function(result){
+                    toggleLogin(false);
+                    if(result){
+                        console.log("successfully logout");
+                    }
+                });
             },
 
             doChangeRoom: function() {

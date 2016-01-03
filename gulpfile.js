@@ -23,6 +23,11 @@ var glob = require('glob-all');
 var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
+
+var proxy = require('proxy-middleware');
+var url = require('url');
+
+
 // var ghPages = require('gulp-gh-pages');
 
 var AUTOPREFIXER_BROWSERS = [
@@ -241,6 +246,10 @@ gulp.task('clean', function() {
 
 // Watch files for changes & reload
 gulp.task('serve', ['lint', 'styles', 'elements', 'images'], function() {
+
+  var proxyOptions = url.parse('http://localhost:8088');
+  proxyOptions.route = '/api';
+
   browserSync({
     port: 5000,
     notify: false,
@@ -259,7 +268,7 @@ gulp.task('serve', ['lint', 'styles', 'elements', 'images'], function() {
     // https: true,
     server: {
       baseDir: ['.tmp', 'app'],
-      middleware: [historyApiFallback()],
+      middleware: [ proxy(proxyOptions) ],
       routes: {
         '/bower_components': 'bower_components'
       }
