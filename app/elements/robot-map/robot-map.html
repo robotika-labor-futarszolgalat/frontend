@@ -24,7 +24,7 @@
 
     </style>
 
-    <template>        
+    <template>
         <div id="map" class="flex layout vertical"></div>
         <paper-fab mini icon="image:crop-free" class="reset-view blue" on-click="resetView"></paper-fab>
     </template>
@@ -34,9 +34,9 @@
         var mapmodule = {};
 
         mapmodule.map = function() {
-            var initWidth, 
-                initHeight, 
-                centered, 
+            var initWidth,
+                initHeight,
+                centered,
                 prevTranslate,
                 actualScale = 1,
                 prevScale = 1,
@@ -51,7 +51,7 @@
                 yScale,
                 pavement,
                 g;
-            
+
             function map() {
                 return map;
             }
@@ -65,8 +65,8 @@
 
                 zoom = d3.behavior.zoom().scaleExtent([1, 6]).on("zoom", map.zoomed);
 
-                yTranslate = (initHeight-(initWidth/2))/2;
-                initGridHeight = (initHeight - (initHeight-(initWidth/2))/2)-yTranslate;
+                yTranslate = 0;
+                initGridHeight = (initWidth*0.64)-yTranslate;
 
                 svg = d3.select("#map")
                         .append("svg").attr("class", "flex")
@@ -80,10 +80,22 @@
                             .style("fill", "none")
                             .style("pointer-events", "all");
 
-                xScale = d3.scale.linear().domain([0, 570]).range([0, initWidth]);
-                yScale = d3.scale.linear().domain([-200, -460]).range([(initHeight - (initHeight-(initWidth/2))/2)-yTranslate, 0]);
+                xScale = d3.scale.linear().domain([0, 781.25]).range([0, initWidth]);
+                yScale = d3.scale.linear().domain([0, -532]).range([(initWidth*0.64)-yTranslate, 0]);
 
-                pavement = d3.svg.line().interpolate("linear").x(function(d) {
+                building = d3.svg.line().interpolate("linear-closed").x(function(d) {
+                                return xScale(d[0]);
+                            }).y(function(d) {
+                                return yScale(d[1]);
+                            });
+
+                space = d3.svg.line().interpolate("linear").x(function(d) {
+                                return xScale(d[0]);
+                            }).y(function(d) {
+                                return yScale(d[1]);
+                            });
+
+                door = d3.svg.line().interpolate("bundle").x(function(d) {
                                 return xScale(d[0]);
                             }).y(function(d) {
                                 return yScale(d[1]);
@@ -115,23 +127,105 @@
                 .attr("x2", initWidth)
                 .attr("y2", function(d) { return d; });
 
-                d3.json("test.json", function(error, jsonData) {
-                    var color1 = d3.scale.category10();
+                d3.json("bogdanfy.json", function(error, jsonData) {
 
-                    g.selectAll("path")
-                        .data(jsonData.features)
+                    g.selectAll(".building")
+                        .data(jsonData.buildings)
                         .enter()
                         .append("path")
                         .attr("d", function(d, i) {
-                            return pavement(d.geometry.coordinates[0]);
+                            var c = d3.svg.line().interpolate(d.properties.interpolate).x(function(d) {
+                                return xScale(d[0]);
+                            }).y(function(d) {
+                                return yScale(d[1]);
+                            });
+                            return c(d.geometry.coordinates[0]);
                         })
                         .attr("text", function(d, i) {
                             return d.properties.ID;
                         })
-                        .attr("fill", function(d, i) {
-                            return color1(i);
+                        .attr("class", "building")
+                        .attr("fill",function(d, i) {
+                            return d.properties.fill;
                         })
-                        .on("click", map.clicked);
+                        .attr("fill-opacity",function(d, i) {
+                            return d.properties.fill_opacity;
+                        })
+                        .attr("stroke", function(d, i) {
+                            return d.properties.stroke;
+                        })
+                        .attr("stroke-width", function(d, i) {
+                            return xScale(d.properties.stroke_width);
+                        })
+                        .attr("stroke-dasharray", function(d, i) {
+                            return d.properties.stroke_dasharray;
+                        })
+                        .append("title")
+                        .text(function(d) { return d.properties.ID + " " + d.properties.Name; });
+
+                    g.selectAll(".space")
+                        .data(jsonData.spaces)
+                        .enter()
+                        .append("path")
+                        .attr("d", function(d, i) {
+                            var c = d3.svg.line().interpolate(d.properties.interpolate).x(function(d) {
+                                return xScale(d[0]);
+                            }).y(function(d) {
+                                return yScale(d[1]);
+                            });
+                            return c(d.geometry.coordinates[0]);
+                        })
+                        .attr("text", function(d, i) {
+                            return d.properties.ID;
+                        })
+                        .attr("class", "space")
+                        .attr("fill",function(d, i) {
+                            return d.properties.fill;
+                        })
+                        .attr("fill-opacity",function(d, i) {
+                            return d.properties.fill_opacity;
+                        })
+                        .attr("stroke", function(d, i) {
+                            return d.properties.stroke;
+                        })
+                        .attr("stroke-width", function(d, i) {
+                            return xScale(d.properties.stroke_width);
+                        })
+                        .attr("stroke-dasharray", function(d, i) {
+                            return d.properties.stroke_dasharray;
+                        })
+                        .append("title")
+                        .text(function(d) { return d.properties.ID + " " + d.properties.Name + d.geometry.coordinates; });
+
+                    g.selectAll(".door")
+                        .data(jsonData.doors)
+                        .enter()
+                        .append("path")
+                        .attr("d", function(d, i) {
+                            return door(d.geometry.coordinates[0]);
+                        })
+                        .attr("text", function(d, i) {
+                            return d.properties.ID;
+                        })
+                        .attr("class", "door")
+                        .attr("stroke", function(d, i) {
+                            return d.properties.stroke;
+                        })
+                        .attr("fill",function(d, i) {
+                            return d.properties.fill;
+                        })
+                        .attr("fill-opacity",function(d, i) {
+                            return d.properties.fill_opacity;
+                        })
+                        .attr("stroke-width", function(d, i) {
+                            return xScale(d.properties.stroke_width);
+                        })
+                        .attr("stroke-dasharray", function(d, i) {
+                            console.log("door");
+                            return d.properties.stroke_dasharray;
+                        })
+                        .on("click", map.clicked).append("title")
+                        .text(function(d) { return d.properties.ID + " " + d.properties.Name; });
 
                     // add circle to svg which represents the robot
                     g.selectAll("circle")
@@ -155,7 +249,7 @@
                 centered = null;
 
                 if (prevScale == d3.event.scale)
-                {                            
+                {
                     g.attr("transform", "translate(" + prevTranslate + ")scale(" + prevScale + ")rotate("+actualRotation+")");
 
                 } else
@@ -173,7 +267,7 @@
                     nheight = getActualSize()[1];
 
                 if (nwidth < nheight)
-                {   
+                {
                     actualRotation = 90;
                 } else
                 {
@@ -192,10 +286,11 @@
                     x = centroid[0];
                     y = centroid[1];
                     console.log("centroid x: " + x);
-                    console.log("centroid y: " + y);                           
-                    k = 4;             
+                    console.log("centroid y: " + y);
+                    k = 4;
                     zoom.scale(k);
-                     if (actualRotation == 90)
+
+                    if (actualRotation == 90)
                     {
                         zoom.translate([(getActualSize()[0] / 2)+(y*4), (getActualSize()[1] / 2)-(x*4)]);
                     } else
@@ -207,13 +302,13 @@
                     .duration(750)
                     .attr("transform", "translate(" + ((getActualSize()[0] / 2)) + "," + getActualSize()[1] / 2 + ")rotate("+actualRotation+")scale(" + k + ")translate("+ -x + "," + -y +")")
                     .style("stroke-width", 1 + "px");
-                } else {                            
+                } else {
                     x = initWidth / 2;
-                    y = initHeight / 2;                            
+                    y = initHeight / 2;
                     centered = null;
                     zoom.scale(1);
                     zoom.translate([yTranslateCorrection,0]);
-                    prevScale = actualScale;                            
+                    prevScale = actualScale;
                     g.transition()
                     .duration(750)
                     .attr("transform", "translate(" + yTranslateCorrection + ","+ 0 + ")scale(" + actualScale + ")rotate("+actualRotation+")")
@@ -254,7 +349,7 @@
                         .duration(550)
                         .attr("transform", "translate(" + 0 + "," + 0 + ")scale(" + actualScale + ")")
                         .style("stroke-width", 1 + "px");
-                }                        
+                }
 
                 zoom.scale(actualScale);
                 return map;
@@ -265,7 +360,7 @@
 
         function getActualSize()
         {
-            return [document.getElementById("map").offsetWidth-10, 
+            return [document.getElementById("map").offsetWidth-10,
                     document.getElementById("map").offsetHeight-10];
         }
 

@@ -1,0 +1,2596 @@
+{
+    "type": "FeatureCollection",
+    "buildings": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            0.0,
+                            -531.25
+                        ],
+                        [
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            781.25,
+                            0.0
+                        ],
+                        [
+                            781.25,
+                            -531.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "0",
+                "Name": "ELTE - IK",
+                "fill": "none",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "3",
+                "interpolate": "linear-closed"
+            }
+        }
+    ],
+    "spaces": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            83.333,
+                            -406.25
+                        ],
+                        [
+                            93.75,
+                            -406.25
+                        ],
+                        [
+                            93.75,
+                            -531.25
+                        ],
+                        [
+                            0.0,
+                            -531.25
+                        ],
+                        [
+                            0.0,
+                            -406.25
+                        ],
+                        [
+                            62.5,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "6",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            177.083,
+                            -406.25
+                        ],
+                        [
+                            187.5,
+                            -406.25
+                        ],
+                        [
+                            187.5,
+                            -531.25
+                        ],
+                        [
+                            93.75,
+                            -531.25
+                        ],
+                        [
+                            93.75,
+                            -406.25
+                        ],
+                        [
+                            156.25,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "7",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            270.833,
+                            -406.25
+                        ],
+                        [
+                            281.25,
+                            -406.25
+                        ],
+                        [
+                            281.25,
+                            -531.25
+                        ],
+                        [
+                            187.5,
+                            -531.25
+                        ],
+                        [
+                            187.5,
+                            -406.25
+                        ],
+                        [
+                            250.0,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "8",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            317.197,
+                            -406.25
+                        ],
+                        [
+                            406.25,
+                            -406.25
+                        ],
+                        [
+                            406.25,
+                            -531.25
+                        ],
+                        [
+                            281.25,
+                            -531.25
+                        ],
+                        [
+                            281.25,
+                            -406.25
+                        ],
+                        [
+                            296.375,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "9",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            433.85375,
+                            -406.25
+                        ],
+                        [
+                            500.0,
+                            -406.25
+                        ],
+                        [
+                            500.0,
+                            -531.25
+                        ],
+                        [
+                            406.25,
+                            -531.25
+                        ],
+                        [
+                            406.25,
+                            -406.25
+                        ],
+                        [
+                            413.02075,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "10",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            56.25,
+                            -395.833
+                        ],
+                        [
+                            56.25,
+                            -406.25
+                        ],
+                        [
+                            0.0,
+                            -406.25
+                        ],
+                        [
+                            0.0,
+                            -281.25
+                        ],
+                        [
+                            56.25,
+                            -281.25
+                        ],
+                        [
+                            56.25,
+                            -375.0
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "24",
+                "Name": "Szerver szoba",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            445.833,
+                            -375.0
+                        ],
+                        [
+                            412.5,
+                            -375.0
+                        ],
+                        [
+                            412.5,
+                            -187.5
+                        ],
+                        [
+                            493.75,
+                            -187.5
+                        ],
+                        [
+                            493.75,
+                            -256.25
+                        ],
+                        [
+                            500.0,
+                            -256.25
+                        ],
+                        [
+                            500.0,
+                            -375.0
+                        ],
+                        [
+                            466.666,
+                            -375.0
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "30",
+                "Name": "Studió",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            318.75,
+                            -375.0
+                        ],
+                        [
+                            318.75,
+                            -156.25
+                        ],
+                        [
+                            412.5,
+                            -156.25
+                        ],
+                        [
+                            412.5,
+                            -375.0
+                       ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "27",
+                "Name": "Bemuató terem",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "none",
+                "stroke_dasharray": "0",
+                "stroke_width": "0",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            329.167,
+                            -375.0
+                        ],
+                        [
+                            318.75,
+                            -375.0
+                        ],
+                        [
+                            318.75,
+                            -156.25
+                        ],
+                        [
+                            391.667,
+                            -156.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "27",
+                "Name": "Bemuató terem wall",
+                "fill": "none",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            350.0,
+                            -375.0
+                        ],
+                        [
+                            412.5,
+                            -375.0
+                        ],
+                        [
+                            412.5,
+                            -156.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "27",
+                "Name": "Bemuató terem wall",
+                "fill": "none",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            478.125,
+                            -156.25
+                        ],
+                        [
+                            493.75,
+                            -156.25
+                        ],
+                        [
+                            493.75,
+                            -187.5
+                        ],
+                        [
+                            412.5,
+                            -187.5
+                        ],
+                        [
+                            412.5,
+                            -156.25
+                        ],
+                        [
+                            457.292,
+                            -156.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "31",
+                "Name": "Takarítószer tároló",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            56.25,
+                            -187.5
+                        ],
+                        [
+                            56.25,
+                            -281.25
+                        ],
+                        [
+                            0.0,
+                            -281.25
+                        ],
+                        [
+                            0.0,
+                            -156.25
+                        ],
+                        [
+                            56.25,
+                            -156.25
+                        ],
+                        [
+                            56.25,
+                            -166.667
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "25",
+                "Name": "Raktar",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            62.5,
+                            -114.58
+                        ],
+                        [
+                            0.0,
+                            -114.58
+                        ],
+                        [
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            93.75,
+                            0.0
+                        ],
+                        [
+                            93.75,
+                            -114.58
+                        ],
+                        [
+                            83.333,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "52",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            156.25,
+                            -114.58
+                        ],
+                        [
+                            93.75,
+                            -114.58
+                        ],
+                        [
+                            93.75,
+                            0.0
+                        ],
+                        [
+                            187.5,
+                            0.0
+                        ],
+                        [
+                            187.5,
+                            -114.58
+                        ],
+                        [
+                            177.083,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "53",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            250.0,
+                            -114.58
+                        ],
+                        [
+                            187.5,
+                            -114.58
+                        ],
+                        [
+                            187.5,
+                            0.0
+                        ],
+                        [
+                            280.75,
+                            0.0
+                        ],
+                        [
+                            280.75,
+                            -114.58
+                        ],
+                        [
+                            270.833,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            296.375,
+                            -114.58
+                        ],
+                        [
+                            280.75,
+                            -114.58
+                        ],
+                        [
+                            280.75,
+                            0.0
+                        ],
+                        [
+                            374.0,
+                            0.0
+                        ],
+                        [
+                            374.0,
+                            -114.58
+                        ],
+                        [
+                            317.197,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "55",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            381.7708,
+                            -114.58
+                        ],
+                        [
+                            374.0,
+                            -114.58
+                        ],
+                        [
+                            374.0,
+                            0.0
+                        ],
+                        [
+                            405.25,
+                            0.0
+                        ],
+                        [
+                            405.25,
+                            -20.83
+                        ],
+                        [
+                            420.625,
+                            -52.08
+                        ],
+                        [
+                            420.625,
+                            -114.58
+                        ],
+                        [
+                            397.3128,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "57",
+                "Name": "Teakonyha",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            420.625,
+                            -114.58
+                        ],
+                        [
+                            420.625,
+                            -83.33
+                        ],
+                        [
+                            467.75,
+                            -83.33
+                        ],
+                        [
+                            467.75,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "58",
+                "Name": "Teakonyha",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            467.75,
+                            -114.58
+                        ],
+                        [
+                            467.75,
+                            -83.33
+                        ],
+                        [
+                            514.625,
+                            -83.33
+                        ],
+                        [
+                            514.625,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "60",
+                "Name": "Teakonyha",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            514.625,
+                            -114.58
+                        ],
+                        [
+                            514.625,
+                            -83.33
+                        ],
+                        [
+                            561.5,
+                            -83.33
+                        ],
+                        [
+                            561.5,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "62",
+                "Name": "Teakonyha",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            420.625,
+                            -83.33
+                        ],
+                        [
+                            420.625,
+                            -52.08
+                        ],
+                        [
+                            405.25,
+                            -20.83
+                        ],
+                        [
+                            405.25,
+                            0.0
+                        ],
+                        [
+                            467.75,
+                            0.0
+                        ],
+                        [
+                            467.75,
+                            -83.33
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "59",
+                "Name": "",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            467.75,
+                            -83.33
+                        ],
+                        [
+                            467.75,
+                            0.0
+                        ],
+                        [
+                            530.25,
+                            0.0
+                        ],
+                        [
+                            530.25,
+                            -36.455
+                        ],
+                        [
+                            514.625,
+                            -67.705
+                        ],
+                        [
+                            514.625,
+                            -83.33
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "61",
+                "Name": "",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            514.625,
+                            -83.33
+                        ],
+                        [
+                            514.625,
+                            -67.705
+                        ],
+                        [
+                            530.25,
+                            -36.455
+                        ],
+                        [
+                            530.25,
+                            0.0
+                        ],
+                        [
+                            561.5,
+                            0.0
+                        ],
+                        [
+                            561.5,
+                            -83.33
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "63",
+                "Name": "",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            500.0,
+                            -531.25
+                        ],
+                        [
+                            500.0,
+                            -256.25
+                        ],
+                        [
+                            493.75,
+                            -256.25
+                        ],
+                        [
+                            493.75,
+                            -156.25
+                        ],
+                        [
+                            650.0,
+                            -156.25
+                        ],
+                        [
+                            650.0,
+                            -187.5
+                        ],
+                        [
+                            781.25,
+                            -187.5
+                        ],
+                        [
+                            781.25,
+                            -531.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "",
+                "Name": "ELTE Sport",
+                "fill": "grey",
+                "fill_opacity": "0.8",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            681.25,
+                            -125.0
+                        ],
+                        [
+                            781.25,
+                            -125.0
+                        ],
+                        [
+                            781.25,
+                            -187.5
+                        ],
+                        [
+                            650.0,
+                            -187.5
+                        ],
+                        [
+                            650.0,
+                            -125.0
+                        ],
+                        [
+                            660.417,
+                            -125.0
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "57",
+                "Name": "Iroda",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            561.5,
+                            -31.25
+                        ],
+                        [
+                            561.5,
+                            0.0
+                        ],
+                        [
+                            650.0,
+                            0.0
+                        ],
+                        [
+                            650.0,
+                            -31.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "65",
+                "Name": "Szélfogó",
+                "fill": "grey",
+                "fill_opacity": "0.6",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            650.0,
+                            -125.0
+                        ],
+                        [
+                            650.0,
+                            0.0
+                        ],
+                        [
+                            781.25,
+                            0.0
+                        ],
+                        [
+                            781.25,
+                            -125.0
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "66",
+                "Name": "Vendégforgalmi helység",
+                "fill": "grey",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "5,5",
+                "stroke_width": "1",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            561.5,
+                            -156.25
+                        ],
+                        [
+                            561.5,
+                            -31.25
+                        ],
+                        [
+                            650.0,
+                            -31.25
+                        ],
+                        [
+                            650.0,
+                            -156.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "64",
+                "Name": "Előtér-recepció",
+                "fill": "grey",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "5,5",
+                "stroke_width": "1",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            56.25,
+                            -406.25
+                        ],
+                        [
+                            56.25,
+                            -156.25
+                        ],
+                        [
+                            0.0,
+                            -156.25
+                        ],
+                        [
+                            0.0,
+                            -114.58
+                        ],
+                        [
+                            374.0,
+                            -114.58
+                        ],
+                        [
+                            374.0,
+                            -156.25
+                        ],
+                        [
+                            318.75,
+                            -156.25
+                        ],
+                        [
+                            318.75,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "26",
+                "Name": "Nagyterű iroda",
+                "fill": "grey",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "0",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            318.75,
+                            -406.25
+                        ],
+                        [
+                            318.75,
+                            -375.0
+                        ],
+                        [
+                            443.75,
+                            -375.0
+                        ],
+                        [
+                            443.75,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "28",
+                "Name": "Közlekedő",
+                "fill": "grey",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "0",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            443.75,
+                            -406.25
+                        ],
+                        [
+                            443.75,
+                            -375.0
+                        ],
+                        [
+                            500,
+                            -375.0
+                        ],
+                        [
+                            500,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "29",
+                "Name": "Raktár",
+                "fill": "grey",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "0",
+                "interpolate": "linear"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            374.0,
+                            -156.25
+                        ],
+                        [
+                            374.0,
+                            -114.58
+                        ],
+                        [
+                            561.5,
+                            -114.58
+                        ],
+                        [
+                            561.5,
+                            -156.25
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "ID": "56",
+                "Name": "Folyosó",
+                "fill": "grey",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "0",
+                "interpolate": "linear"
+            }
+        }
+    ],
+    "doors": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            62.5,
+                            -406.25
+                        ],
+                        [
+                            62.5,
+                            -427.083
+                        ],
+                        [
+                            83.333,
+                            -427.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "6",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            83.333,
+                            -427.083
+                        ],
+                        [
+                            83.333,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "6",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            156.25,
+                            -406.25
+                        ],
+                        [
+                            156.25,
+                            -427.083
+                        ],
+                        [
+                            177.083,
+                            -427.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "7",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            177.083,
+                            -427.083
+                        ],
+                        [
+                            177.083,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "7",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            250.0,
+                            -406.25
+                        ],
+                        [
+                            250.0,
+                            -427.083
+                        ],
+                        [
+                            270.833,
+                            -427.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "8",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            270.833,
+                            -427.083
+                        ],
+                        [
+                            270.833,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "8",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            62.5,
+                            -114.58
+                        ],
+                        [
+                            62.5,
+                            -93.744
+                        ],
+                        [
+                            83.333,
+                            -93.744
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "52",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            83.333,
+                            -114.58
+                        ],
+                        [
+                            83.333,
+                            -93.744
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "52",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            156.25,
+                            -114.58
+                        ],
+                        [
+                            156.25,
+                            -93.744
+                        ],
+                        [
+                            177.083,
+                            -93.744
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "53",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            177.083,
+                            -114.58
+                        ],
+                        [
+                            177.083,
+                            -93.744
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "53",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            250.0,
+                            -114.58
+                        ],
+                        [
+                            250.0,
+                            -93.744
+                        ],
+                        [
+                            270.833,
+                            -93.744
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            270.833,
+                            -114.58
+                        ],
+                        [
+                            270.833,
+                            -93.744
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            357.332,
+                            -152.083
+                        ],
+                        [
+                            357.332,
+                            -135.415
+                        ],
+                        [
+                            374.0,
+                            -135.415
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            357.332,
+                            -118.747
+                        ],
+                        [
+                            357.332,
+                            -135.415
+                        ],
+                        [
+                            374.0,
+                            -135.415
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            374.0,
+                            -156.25
+                        ],
+                        [
+                            374.0,
+                            -152.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            374.0,
+                            -118.747
+                        ],
+                        [
+                            374.0,
+                            -114.58
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            357.332,
+                            -152.083
+                        ],
+                        [
+                            374.0,
+                            -152.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            357.332,
+                            -118.747
+                        ],
+                        [
+                            374.0,
+                            -118.747
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "54",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            317.197,
+                            -114.58
+                        ],
+                        [
+                            317.197,
+                            -93.744
+                        ],
+                        [
+                            296.375,
+                            -93.744
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "55",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            296.375,
+                            -114.58
+                        ],
+                        [
+                            296.375,
+                            -93.744
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "55",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            56.25,
+                            -166.667
+                        ],
+                        [
+                            77.083,
+                            -166.667
+                        ],
+                        [
+                            77.083,
+                            -187.5
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "25",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            56.25,
+                            -187.5
+                        ],
+                        [
+                            77.083,
+                            -187.5
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "25",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            56.25,
+                            -375.0
+                        ],
+                        [
+                            77.083,
+                            -375.0
+                        ],
+                        [
+                            77.083,
+                            -395.883
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "24",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            56.25,
+                            -395.833
+                        ],
+                        [
+                            77.083,
+                            -395.833
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "24",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            317.197,
+                            -406.25
+                        ],
+                        [
+                            317.197,
+                            -427.083
+                        ],
+                        [
+                            296.375,
+                            -427.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "9",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            296.375,
+                            -427.083
+                        ],
+                        [
+                            296.375,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "9",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            329.167,
+                            -354.167
+                        ],
+                        [
+                            350.0,
+                            -354.167
+                        ],
+                        [
+                            350.0,
+                            -375.0
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "27",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            329.167,
+                            -375.0
+                        ],
+                        [
+                            329.167,
+                            -354.167
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "27",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            391.667,
+                            -156.25
+                        ],
+                        [
+                            391.667,
+                            -177.083
+                        ],
+                        [
+                            412.5,
+                            -177.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "27",
+                "Name": "Door 2",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            411.0,
+                            -177.083
+                        ],
+                        [
+                            411.0,
+                            -156.25
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "27",
+                "Name": "Door 2",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            466.666,
+                            -354.167
+                        ],
+                        [
+                            445.833,
+                            -354.167
+                        ],
+                        [
+                            445.833,
+                            -375.0
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "30",
+                "Name": "Door 2",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            466.666,
+                            -375.0
+                        ],
+                        [
+                            466.666,
+                            -354.167
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "30",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            461.4575,
+                            -401.0415
+                        ],
+                        [
+                            461.4575,
+                            -380.2085
+                        ],
+                        [
+                            440.6245,
+                            -380.2085
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "29",
+                "Name": "Door 2",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            440.6245,
+                            -406.25
+                        ],
+                        [
+                            440.6245,
+                            -401.0415
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "29",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            440.6245,
+                            -375.0
+                        ],
+                        [
+                            440.6245,
+                            -380.2085
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "29",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            461.4575,
+                            -401.0415
+                        ],
+                        [
+                            440.6245,
+                            -401.0415
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "29",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            413.02075,
+                            -427.083
+                        ],
+                        [
+                            433.85375,
+                            -427.083
+                        ],
+                        [
+                            433.85375,
+                            -406.25
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "10",
+                "Name": "Door 2",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            413.02075,
+                            -406.25
+                        ],
+                        [
+                            413.02075,
+                            -427.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "10",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            478.125,
+                            -177.083
+                        ],
+                        [
+                            457.292,
+                            -177.083
+                        ],
+                        [
+                            457.292,
+                            -156.25
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "31",
+                "Name": "Door 2",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            478.125,
+                            -156.25
+                        ],
+                        [
+                            478.125,
+                            -177.083
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "31",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            660.417,
+                            -145.833
+                        ],
+                        [
+                            681.25,
+                            -145.833
+                        ],
+                        [
+                            681.25,
+                            -125.0
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "??",
+                "Name": "Door 2",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "2,2",
+                "stroke_width": "1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            660.417,
+                            -125.0
+                        ],
+                        [
+                            660.417,
+                            -145.833
+                        ]
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "ID": "??",
+                "Name": "Door",
+                "fill": "none",
+                "fill_opacity": "0.4",
+                "stroke": "grey",
+                "stroke_dasharray": "0",
+                "stroke_width": "1"
+            }
+        }
+    ]
+}
