@@ -247,7 +247,7 @@ gulp.task('clean', function() {
 // Watch files for changes & reload
 gulp.task('serve', ['lint', 'styles', 'elements', 'images'], function() {
 
-  var proxyOptions = url.parse('http://localhost:8088');
+  var proxyOptions = url.parse('http://192.168.1.220:8888');
   proxyOptions.route = '/api';
 
   browserSync({
