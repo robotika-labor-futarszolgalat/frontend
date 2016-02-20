@@ -27,5 +27,6 @@ after_success:
   - eval "$(ssh-agent -s)" #start the ssh agent
   - chmod 600 id_rsa # this key should have push access
   - ssh-add id_rsa
+  - echo "StrictHostKeyChecking no" >> ~/.ssh/config
   - git remote add deploy ssh://git@89.132.115.149:555/home/git/robot-futar/frontend.git
   - git push deploy
