@@ -247,7 +247,7 @@ gulp.task('clean', function() {
 // Watch files for changes & reload
 gulp.task('serve', ['lint', 'styles', 'elements', 'images'], function() {
 
-  var proxyOptions = url.parse('http://localhost:8888');
+  var proxyOptions = url.parse('https://robikapa-backend.herokuapp.com');
   proxyOptions.route = '/api';
 
   browserSync({
