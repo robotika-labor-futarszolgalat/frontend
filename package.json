@@ -35,6 +35,7 @@
     "web-component-tester": "*"
   },
   "scripts": {
+    "postinstall": "bower install",
     "test": "gulp test:local",
     "start": "gulp serve",
     "lint": "gulp lint"
