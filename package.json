@@ -44,9 +44,10 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "bower": "*",
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "lodash": "*",
     "proxy-middleware": "^0.15.0",
-    "url": "^0.11.0",
-	"lodash": "*"
+    "url": "^0.11.0"
   }
 }
