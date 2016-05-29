@@ -61,6 +61,7 @@
     "proxy-middleware": "^0.15.0",
     "run-sequence": "^1.2.1",
     "url": "^0.11.0",
+    "vertx3-eventbus-client": "^3.2.1",
     "web-component-tester": "^4.2.2"
   }
 }

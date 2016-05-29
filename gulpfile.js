@@ -270,7 +270,8 @@ gulp.task('serve', ['lint', 'styles', 'elements', 'images'], function() {
       baseDir: ['.tmp', 'app'],
       middleware: [ proxy(proxyOptions) ],
       routes: {
-        '/bower_components': 'bower_components'
+        '/bower_components': 'bower_components',
+        '/node_modules': 'node_modules'
       }
     }
   });
