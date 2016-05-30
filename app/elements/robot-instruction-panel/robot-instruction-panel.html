@@ -1,18 +1,67 @@
+<link rel="import" href="robot-item.html">
+
 <dom-module id="robot-instruction-panel">
     <style>
-        :host{
-            background-color: #99ff99;
-        }
+      div[role="listbox"] {
+        border: 1px solid #e5e5e5;
+      }
+
+      #robotControlPanel {
+        margin: 10px;
+      }
     </style>
 
     <template>
-        <div>Instruction GUI goes here</div>
+      <div id="robotControlPanel">
+        <h2>Active robots</h2>
+        <div id="activeRobots" role="listbox">
+        </div>
+      </div>
     </template>
 
+    <script type="text/javascript" src="../../bower_components/chance/chance.js"></script>
     <script>
+        var eventBus;
+        var pl;
+        var robots = new Array();
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
         Polymer({
             is: "robot-instruction-panel",
             properties: {
+            },
+            attached: function() {
+                this.async(function(){
+                    toast.alwaysOnTop = true;
+                    eventBus = new EventBus('http://localhost:5111/eventbus');
+                    eventBus.onopen = function () {
+                      eventBus.registerHandler('new.robot', function (error, message) {
+                          obj = JSON.parse(message.body);
+                          if ($.inArray(obj.robotId, robots) > -1) return;
+                          toast.text = "Robot connected: " + obj.robotId;
+                          toast.open();
+                          robots.push(obj.robotId);
+                          $("#activeRobots").append(
+                            "<robot-item id=\"" + obj.robotId + "\" uuid=\"" + obj.robotId + "\" name=\"" + chance.first() + "\" color=\"" + getRandomColor() + "\"></robot-item>"
+                          );
+                      });
+                      eventBus.registerHandler('logout.robot', function (error, message) {
+                          obj = JSON.parse(message.body);
+                          toast.text = "Robot disconnected: " + obj.robotId;
+                          toast.open();
+                          $("#" + obj.robotId).remove();
+                      });
+                      eventBus.send("login.client", "")
+                    }
+                });
             }
         });
     </script>

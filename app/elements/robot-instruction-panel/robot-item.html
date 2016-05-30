@@ -1,0 +1,43 @@
+<dom-module id="robot-item">
+    <style>
+    .avatar {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    </style>
+
+    <template>
+      <paper-icon-item>
+        <div class="avatar" style="background:{{color}};" item-icon></div>
+        <paper-item-body two-line>
+          <div>{{name}}</div>
+          <div secondary>{{uuid}}</div>
+        </paper-item-body>
+        <paper-icon-button icon="star" alt="favourite this!">
+        </paper-icon-button>
+      </paper-icon-item>
+    </template>
+
+    <script>
+        Polymer({
+            is: "robot-item",
+            properties: {
+              name: {
+                type: String,
+                value: ''
+              },
+              color: {
+                type: String,
+                value: ''
+              },
+              uuid: {
+                type: String,
+                value: ''
+              }
+            }
+        });
+    </script>
+</dom-module>
