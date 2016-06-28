@@ -16,6 +16,12 @@
         <h2>Active robots</h2>
         <div id="activeRobots" role="listbox">
         </div>
+        <h2>Placed BT devices</h2>
+        <div id="placedBTDevices" role="listbox">
+        </div>
+        <h2>New BT devices</h2>
+        <div id="newBTDevices" role="listbox">
+        </div>
       </div>
     </template>
 
@@ -24,6 +30,8 @@
         var eventBus;
         var pl;
         var robots = new Array();
+        var newBTDevices = new Array();
+        var placedBTDevices = new Array();
 
         function getRandomColor() {
             var letters = '0123456789ABCDEF'.split('');
@@ -58,6 +66,16 @@
                           toast.text = "Robot disconnected: " + obj.robotId;
                           toast.open();
                           $("#" + obj.robotId).remove();
+                      });
+                      eventBus.registerHandler('new.bt.device', function (error, message) {
+                          obj = JSON.parse(message.body);
+                          if ($.inArray(obj.id, newBTDevices) > -1) return;
+                          toast.text = "New BT device is discovered: " + obj.address;
+                          toast.open();
+                          newBTDevices.push(obj.address);
+                          $("#newBTDevices").append(
+                            "<robot-item id=\"" + obj.address + "\" uuid=\"" + obj.address + "\" name=\"" + obj.address + "\" color=\"" + getRandomColor() + "\"></robot-item>"
+                          );
                       });
                       eventBus.send("login.client", "")
                     }
