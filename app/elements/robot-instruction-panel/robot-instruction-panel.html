@@ -68,6 +68,7 @@
                           toast.text = "Robot disconnected: " + obj.robotId;
                           toast.open();
                           $("#" + obj.robotId).remove();
+                          $("#" + obj.robotId + "pos").remove();
                       });
                       eventBus.registerHandler('new.bt.device', function (error, message) {
                           obj = JSON.parse(message.body);
@@ -104,6 +105,13 @@
                           });
                           obj['color'] = clr;
                           that.fire('pointChanged', obj);
+                      });
+
+                      eventBus.registerHandler('robot.position', function (error, message) {
+                          obj = JSON.parse(message.body);
+                          console.dir(obj);
+                          obj['color'] = getRandomColor();
+                          that.fire('robotPositionChanged', obj);
                       });
 
                       eventBus.send("login.client", "")
