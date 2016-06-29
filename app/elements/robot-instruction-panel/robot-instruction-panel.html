@@ -51,7 +51,7 @@
               that = this;
                 this.async(function(){
                     toast.alwaysOnTop = true;
-                    eventBus = new EventBus('http://localhost:5000/eventbus');
+                    eventBus = new EventBus('https://robikapa-backend.herokuapp.com/eventbus');
                     eventBus.onopen = function () {
                       eventBus.registerHandler('new.robot', function (error, message) {
                           obj = JSON.parse(message.body);
