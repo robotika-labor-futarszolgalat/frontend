@@ -16,7 +16,7 @@
           <div>{{name}}</div>
           <div secondary>{{uuid}}</div>
         </paper-item-body>
-        <paper-icon-button icon="star" alt="favourite this!">
+        <paper-icon-button icon="star" alt="favourite this!" on-click="handleClick">
         </paper-icon-button>
       </paper-icon-item>
     </template>
@@ -36,7 +36,11 @@
               uuid: {
                 type: String,
                 value: ''
-              }
+              },
+            },
+            handleClick: function(e, detail) {
+              console.log("fire bt click")
+              this.fire('kick', {device: this.uuid});
             }
         });
     </script>

@@ -103,6 +103,9 @@
                 xScale = d3.scale.linear().domain([0, 781.25]).range([0, initWidth]);
                 yScale = d3.scale.linear().domain([0, -532]).range([(initWidth*0.64)-yTranslate, 0]);
 
+                xBackScale = d3.scale.linear().domain([0, initWidth]).range([0, 781.25]);
+                yBackScale = d3.scale.linear().domain([(initWidth*0.64)-yTranslate, 0]).range([0, -532]);
+
                 building = d3.svg.line().interpolate("linear-closed").x(function(d) {
                                 return xScale(d[0]);
                             }).y(function(d) {
@@ -125,7 +128,11 @@
                         .style("stroke-width", "1px")
                         .attr("id","maing")
                         .attr("transform","translate("+ 0 + "," + 0 +")rotate("+ actualRotation +")")
-                        .call(zoom);
+                        .call(zoom).on("click", function mousemove(d, i) {
+                          var temp = document.querySelector("robot-map");
+                          console.log(xBackScale(d3.mouse(this)[0]) + ", " + yBackScale(d3.mouse(this)[1]));
+                          temp.pointSelected(xBackScale(d3.mouse(this)[0]), yBackScale(d3.mouse(this)[1]));
+                        });
 
                 g.append("g")
                 .attr("class", "x axis")
@@ -244,7 +251,7 @@
                             console.log("door");
                             return d.properties.stroke_dasharray;
                         })
-                        .on("click", map.clicked).append("title")
+                        .append("title")
                         .text(function(d) { return d.properties.ID + " " + d.properties.Name; });
 
                     // add circle to svg which represents the robot
@@ -262,6 +269,22 @@
 
                 });
                 return map;
+            };
+
+            map.placeBTDevice = function(obj) {
+              normalizedAddress = obj.address.split(":").join("")
+              $("#" + normalizedAddress + "point").remove();
+              g.append("circle")
+              .attr("cx", xScale(obj.x))
+              .attr("cy", yScale(obj.y))
+              .attr("r", "8px")
+              .attr("fill", obj.color)
+              .attr("stroke", "blue")
+              .attr("stroke-width", 5)
+              .attr("stroke-opacity", 0.5)
+              .attr("id", normalizedAddress + "point")
+              .append("title")
+              .text(obj.address);
             };
 
             map.zoomed = function() {
@@ -295,7 +318,9 @@
                 }
                 return map;
             };
-
+            map.onclick = function(d) {
+              console.log()
+            };
             map.clicked = function(d) {
                 var x, y, k;
 
@@ -404,9 +429,17 @@
                 console.log("Reset view...");
                 mainMap.updateWindow();
             },
+            pointSelected: function(x, y) {
+                this.fire('pointselected', {x: x, y: y});
+            },
             attached: function() {
                 this.async(function(){
                      mainMap = mapmodule.map().init();
+                     $("#instructionPanel").on("pointChanged", function (e) {
+                       console.log("pointChanged");
+                       console.log(e.originalEvent.detail);
+                       mainMap.placeBTDevice(e.originalEvent.detail);
+                     });
                 });
             }
         });

@@ -30,8 +30,9 @@
         var eventBus;
         var pl;
         var robots = new Array();
-        var newBTDevices = new Array();
-        var placedBTDevices = new Array();
+        var newBTDevices = new Map();
+        var placedBTDevices = new Map();
+        var selectedBTDevice = null;
 
         function getRandomColor() {
             var letters = '0123456789ABCDEF'.split('');
@@ -47,9 +48,10 @@
             properties: {
             },
             attached: function() {
+              that = this;
                 this.async(function(){
                     toast.alwaysOnTop = true;
-                    eventBus = new EventBus('https://robikapa-backend.herokuapp.com/eventbus');
+                    eventBus = new EventBus('http://localhost:5000/eventbus');
                     eventBus.onopen = function () {
                       eventBus.registerHandler('new.robot', function (error, message) {
                           obj = JSON.parse(message.body);
@@ -69,15 +71,52 @@
                       });
                       eventBus.registerHandler('new.bt.device', function (error, message) {
                           obj = JSON.parse(message.body);
-                          if ($.inArray(obj.id, newBTDevices) > -1) return;
+                          normalizedAddress = obj.address.split(":").join("")
+                          if (newBTDevices.get(normalizedAddress) != undefined) return;
                           toast.text = "New BT device is discovered: " + obj.address;
                           toast.open();
-                          newBTDevices.push(obj.address);
+                          newBTDevices.set(normalizedAddress, obj);
                           $("#newBTDevices").append(
-                            "<robot-item id=\"" + obj.address + "\" uuid=\"" + obj.address + "\" name=\"" + obj.address + "\" color=\"" + getRandomColor() + "\"></robot-item>"
+                            "<robot-item id=\"" + normalizedAddress + "new\" uuid=\"" + obj.address + "\" name=\"" + obj.name + "\" color=\"" + getRandomColor() + "\"></robot-item>"
                           );
+                          $("#" + normalizedAddress + "new").on("kick", function (e) {
+                            console.log(e.originalEvent.detail);
+                            selectedBTDevice = e.originalEvent.detail.device;
+                          });
                       });
+
+                      eventBus.registerHandler('placed.bt.device', function (error, message) {
+                          obj = JSON.parse(message.body);
+                          normalizedAddress = obj.address.split(":").join("")
+                          placedBTDevices.set(normalizedAddress, obj);
+                          toast.text = "BT device is placed: " + obj.address;
+                          toast.open();
+                          newBTDevices.delete(normalizedAddress)
+                          $("#" + normalizedAddress + "new").remove();
+                          $("#" + normalizedAddress).remove();
+                          clr = getRandomColor();
+                          $("#placedBTDevices").append(
+                            "<robot-item id=\"" + normalizedAddress + "\" uuid=\"" + obj.address + "\" name=\"" + obj.address + "\" color=\"" + clr + "\"></robot-item>"
+                          );
+                          $("#" + normalizedAddress).on("kick", function (e) {
+                            console.log(e.originalEvent.detail);
+                            selectedBTDevice = e.originalEvent.detail.device;
+                          });
+                          obj['color'] = clr;
+                          that.fire('pointChanged', obj);
+                      });
+
                       eventBus.send("login.client", "")
+
+                      $("#robotMap").on("pointselected", function (e) {
+                        console.dir(e.originalEvent.detail);
+                        if (selectedBTDevice != null)
+                        {
+                          console.log("place bt device");
+                          eventBus.send("place.bt.device", {"address": selectedBTDevice, "x": e.originalEvent.detail.x, "y": e.originalEvent.detail.y})
+                        }
+
+                      });
                     }
                 });
             }
